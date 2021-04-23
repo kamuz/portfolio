@@ -5,7 +5,12 @@
 body {
   background-color: #f1f1f1;
   padding: 20px;
-  font-family: Arial;
+  font-family: Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+
+a {
+  color: #000;
 }
 
 .center {
@@ -19,8 +24,30 @@ body {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 32px;
+  margin: 10px 0;
   word-break: break-all;
+}
+
+.social a {
+  position: relative;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.social a:after {
+  content: '|';
+  position: absolute;
+  top: -1px;
+  right: -14px;
+}
+
+.social a:last-child {
+  margin: 0;
+}
+
+.social a:last-child:after {
+  display: none;
 }
 
 .row {
@@ -47,6 +74,11 @@ h1 {
 .content {
   background-color: white;
   padding: 10px;
+  transition: all 0.5s;
+}
+
+.content:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .show {
@@ -59,6 +91,8 @@ h1 {
   padding: 12px 16px;
   background-color: white;
   cursor: pointer;
+  font-size: 15px;
+  transition: all 0.5s;
 }
 
 .btn:hover {
@@ -81,7 +115,10 @@ h1 {
 .projects a {
   display: block;
   text-align: center;
-  line-height: 2em;
+}
+
+.projects figure {
+  margin: 0;
 }
 
 .projects img {
