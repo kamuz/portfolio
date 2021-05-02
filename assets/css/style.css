@@ -50,10 +50,6 @@ h1 {
   display: none;
 }
 
-.row {
-  margin: 10px -16px;
-}
-
 .row,
 .row > .column {
   padding: 8px;
@@ -93,6 +89,7 @@ h1 {
   cursor: pointer;
   font-size: 15px;
   transition: all 0.5s;
+  margin-bottom: 5px;
 }
 
 .btn:hover {
@@ -124,4 +121,32 @@ h1 {
 .projects img {
   width: 100%;
   height: auto;
+}
+
+@media(max-width: 700px){
+  .row {
+    padding: 0;
+    margin: 10px 0;
+  }
+  .row > .column {
+    padding: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 550px){
+  body {
+    margin: 0;
+    padding: 20px;
+  }
+  .row {
+    padding: 0;
+    margin: 10px 0;
+  }
+  .row > .column {
+    padding: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
 }
