@@ -53,10 +53,12 @@ h1 {
 .row,
 .row > .column {
   padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .column {
-  float: left;
   width: 33.33%;
   display: none;
 }
