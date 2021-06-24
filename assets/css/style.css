@@ -50,16 +50,15 @@ h1 {
   display: none;
 }
 
-.row,
-.row > .column {
-  padding: 8px;
+.row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .column {
-  width: 33.33%;
+  width: 31%;
+  margin: 10px;
   display: none;
 }
 
