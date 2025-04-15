@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .filter-item { display: none; }
+    .filter-item.active { display: block; }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Sidebar -->
+    <aside class="w-full sm:w-64 bg-white shadow-md p-6 sm:fixed h-auto sm:h-full">
+        <div class="text-center">
+            <img src="assets/img/vk.jpg" alt="Avatar" class="w-40 h-40 rounded-full mx-auto">
+            <h1 class="text-2xl font-bold mt-4">Volodymyr Kamuz</h1>
+        </div>
+        <nav class="mt-8 space-y-3">
+            <a href="#portfolio" class="block text-lg hover:text-blue-500"><i class="fas fa-briefcase mr-2"></i>Portfolio</a>
+            <a href="#skills" class="block text-lg hover:text-blue-500"><i class="fas fa-code mr-2"></i>Skills</a>
+            <a href="#about" class="block text-lg hover:text-blue-500"><i class="fas fa-user mr-2"></i>About</a>
+            <a href="#contact" class="block text-lg hover:text-blue-500"><i class="fas fa-envelope mr-2"></i>Contact</a>
+        </nav>
+    </aside>
+    <!-- Main content -->
+    <main class="sm:ml-64 p-6">
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">My Portfolio</h2>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button onclick="filterSelection('all')" class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"><i class="fas fa-layer-group mr-1"></i>All</button>
+                <button onclick="filterSelection('web')" class="bg-gray-200 px-4 py-1 rounded hover:bg-blue-300"><i class="fas fa-globe mr-1"></i>Web</button>
+                <button onclick="filterSelection('design')" class="bg-gray-200 px-4 py-1 rounded hover:bg-blue-300"><i class="fas fa-paint-brush mr-1"></i>Design</button>
+                <button onclick="filterSelection('photo')" class="bg-gray-200 px-4 py-1 rounded hover:bg-blue-300"><i class="fas fa-camera mr-1"></i>Photo</button>
+            </div>
+            <!-- Portfolio Items -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="assets/img/mountains.jpg" alt="Mountains" class="filter-item web active w-full h-auto rounded shadow">
+                <img src="assets/img/lights.jpg" alt="Lights" class="filter-item design active w-full h-auto rounded shadow">
+                <img src="assets/img/nature.jpg" alt="Nature" class="filter-item photo active w-full h-auto rounded shadow">
+                <img src="assets/img/bear.jpg" alt="Project 1" class="filter-item web active w-full h-auto rounded shadow">
+                <img src="assets/img/sky.jpg" alt="Project 2" class="filter-item design active w-full h-auto rounded shadow">
+                <img src="assets/img/coffee.jpg" alt="Project 3" class="filter-item photo active w-full h-auto rounded shadow">
+            </div>
+        </section>
+        <!-- Technical Skills Section -->
+        <section id="skills" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">Technical Skills</h2>
+            <ul class="space-y-3">
+                <li><i class="fab fa-html5 text-orange-500 mr-2"></i>HTML</li>
+                <li><i class="fab fa-css3-alt text-blue-500 mr-2"></i>CSS</li>
+                <li><i class="fab fa-js-square text-yellow-500 mr-2"></i>JavaScript</li>
+                <li><i class="fab fa-react text-cyan-500 mr-2"></i>React</li>
+                <li><i class="fab fa-laravel text-red-500 mr-2"></i>Laravel</li>
+                <li><i class="fab fa-wordpress text-blue-700 mr-2"></i>WordPress</li>
+            </ul>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">About</h2>
+            <p class="text-lg leading-relaxed">
+                I am a full-stack developer passionate about building efficient, scalable, and user-friendly web applications.
+            </p>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="mb-12">
+            <h2 class="text-3xl font-bold mb-4">Contact</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block font-semibold">Name</label>
+                    <input type="text" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div>
+                    <label class="block font-semibold">Email</label>
+                    <input type="email" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-400">
+                </div>
+                <div>
+                    <label class="block font-semibold">Message</label>
+                    <textarea rows="4" class="w-full border border-gray-300 rounded px-4 py-2 focus:ring-2 focus:ring-blue-400"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+            </form>
+        </section>
+        <!-- Footer -->
+        <footer class="text-center py-6 border-t mt-12 text-sm text-gray-500">2025 &copy; Volodymyr Kamuz</footer>
+    </main>
+    <!-- Filter Script -->
+    <script>
+    function filterSelection(category) {
+        const items = document.querySelectorAll('.filter-item');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>
